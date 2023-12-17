@@ -6,6 +6,14 @@ key_trigger {
   input: KEY_DOWN
   action: "down"
 }
+key_trigger {
+  input: KEY_ESC
+  action: "escape"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "space"
+}
 gamepad_trigger {
   input: GAMEPAD_LPAD_UP
   action: "up"

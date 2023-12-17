@@ -16,6 +16,8 @@ function on_input(self, action_id, action)
 	elseif action_id == hash("profiler_toggle") and action.pressed then
 		msg.post("@system:", "toggle_profile")
 		return true
+	elseif action_id == hash("escape") and action.pressed then 
+		sys.exit(0)
 	end
 	return false
 end
