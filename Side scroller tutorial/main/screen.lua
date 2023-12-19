@@ -29,8 +29,8 @@ function rgb2long(r, g, b)
 	return b* 256 * 256 + g * 256 + r
 end
 
-function screen:resolution()
-	local hwnd = user32.FindWindowA(nil, "def1")
+function screen:resolution(game_screen_name)
+	local hwnd = user32.FindWindowA(nil, game_screen_name)
 	return {w = user32.GetSystemMetrics(0), h = user32.GetSystemMetrics(1)}
 end
 

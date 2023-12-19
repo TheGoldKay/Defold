@@ -6,7 +6,7 @@ function init(self)
 	--defos.set_window_size(0, 0, 500, 500)
 	local win_h = sys.get_config_int("display.height")
 	local win_w = sys.get_config_int("display.width")
-	local res = screen:resolution()
+	local res = screen:resolution(sys.get_config_string("display.title"))
 	local newX = res.w / 2 - win_w / 2
 	local newY = res.h / 2 - win_h / 2
 	defos.set_window_size(newX, newY, win_w, win_h)

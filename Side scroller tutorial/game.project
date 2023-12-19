@@ -10,7 +10,7 @@ game_binding = /input/game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 1280
+width = 1000
 height = 720
 
 [physics]
@@ -19,6 +19,3 @@ scale = 0.02
 [script]
 shared_state = 1
 
-[defos]
-window_x = 200
-window_y = 40
