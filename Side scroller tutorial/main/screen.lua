@@ -19,6 +19,7 @@ ffi.cdef[[
 	BOOL SetWindowLongA(HWND hWnd, int nIndex, DWORD dwNewLong);
 	BOOL SetLayeredWindowAttributes(HWND hWnd, DWORD crKey, BYTE bAlpha, DWORD dwFlags);
 	DWORD GetWindowLongA(HWND hWnd, int nIndex); 
+	int GetSystemMetrics(int nIndex);
 ]]
 
 function rgb2long(r, g, b)
@@ -26,6 +27,11 @@ function rgb2long(r, g, b)
 		r, g, b = unpack(r)
 	end 
 	return b* 256 * 256 + g * 256 + r
+end
+
+function screen:resolution()
+	local hwnd = user32.FindWindowA(nil, "def1")
+	return {w = user32.GetSystemMetrics(0), h = user32.GetSystemMetrics(1)}
 end
 
 function setWindowTransparent(window_name, transparent_color)

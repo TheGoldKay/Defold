@@ -6,8 +6,11 @@ function init(self)
 	--defos.set_window_size(0, 0, 500, 500)
 	local win_h = sys.get_config_int("display.height")
 	local win_w = sys.get_config_int("display.width")
-	defos.set_window_size(50, 50, win_w, win_h)
-	print(screen.size())
+	local res = screen:resolution()
+	local newX = res.w / 2 - win_w / 2
+	local newY = res.h / 2 - win_h / 2
+	defos.set_window_size(newX, newY, win_w, win_h)
+
 	-- set blue background
 	msg.post("@render:", "clear_color", { color = vmath.vector4(0.52, 0.80, 1, 0) } )
 	msg.post(".", "acquire_input_focus")
