@@ -1,5 +1,6 @@
 [project]
-title = Side scroller tutorial
+title = def1
+dependencies#0 = https://github.com/subsoap/defos/archive/refs/tags/v2.7.1.zip
 
 [bootstrap]
 main_collection = /main/main.collectionc
@@ -18,3 +19,6 @@ scale = 0.02
 [script]
 shared_state = 1
 
+[defos]
+window_x = 200
+window_y = 40
